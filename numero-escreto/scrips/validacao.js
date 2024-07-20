@@ -1,5 +1,12 @@
 function verificaSeOChutePossuiValorValido(chute){
-    const numero = parseInt(chute)
+    if (chute == 'game over'){
+        document.body.innerHTML = `
+        <h1>Game Over!</h1>
+        <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
+        `
+        document.body.style.backgroundColor = '#EF5A6F'
+    } else{
+        const numero = parseInt(chute)
 
     if(chuteForInvalido(numero)){
         elementoChute.innerHTML += `<div>Valor é inválido</div>`
@@ -21,6 +28,8 @@ function verificaSeOChutePossuiValorValido(chute){
     } else{
         elementoChute.innerHTML += `<div>O número secreto é maior <i class="fa-solid fa-up-long"></i></div>`
     }
+    }
+    
 }
 
 
